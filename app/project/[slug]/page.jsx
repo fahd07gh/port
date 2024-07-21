@@ -43,11 +43,12 @@ export default function page({ params }) {
       </div> */}
       <div className="relative mt-5 mb-20">
         <img
-          src="https://images.unsplash.com/photo-1717501218325-ff260b4f4b01?q=800&w=425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          //   src="https://images.unsplash.com/photo-1717501218325-ff260b4f4b01?q=800&w=425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://picsum.photos/1000"
           alt={params.slug}
-          className="aspect-video w-full rounded-md"
+          className="aspect-video w-full rounded-md border"
         />
-        <div className="bg-button rounded-lg px-5 py-2 w-[calc(100%-20px)] absolute translate-y-1/2 -translate-x-1/2 left-1/2 bottom-0 ">
+        <div className="bg-accent/90 hover:bg-accent duration-300 rounded-lg px-5 py-2 w-[calc(100%-20px)] absolute translate-y-1/2 -translate-x-1/2 left-1/2 bottom-0 ">
           <h1 className="font-black text-4xl">{params.slug}</h1>
           <div className="flex justify-between items-center px-2">
             <div className="flex flex-row flex-nowrap gap-1">
@@ -60,7 +61,7 @@ export default function page({ params }) {
           </div>
         </div>
       </div>
-      <p>
+      <p className="px-3">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur,
         assumenda cupiditate. Nemo odio facilis ad voluptatum a exercitationem
         quidem ea adipisci recusandae soluta voluptatem minima, nam veniam

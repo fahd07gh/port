@@ -63,7 +63,7 @@ export default async function Home() {
   );
 
   // wait 5 seconds before return
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  // await new Promise((resolve) => setTimeout(resolve, 500));
 
   return (
     <>
@@ -126,50 +126,44 @@ export default async function Home() {
         <SectionTitle title="PROJECT" />
         <div className="grid grid-cols-3 gap-5 px-2">
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100?grayscale"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100?grayscale"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100?grayscale"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
           <Card
-            // Image="https://picsum.photos/177/100"
             Image="https://picsum.photos/177/100"
             title="Portfolio"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
           />
         </div>
       </section>
-      <section>
+      <section className="mb-10">
         <SectionTitle title="CONTACT" />
         <div className="p-3">
           <form action="" className="bg-accent w-full rounded-xl px-3">
-            <Dddd name="Name" />
-            <Dddd name="Email" />
-            <Dddd name="Message" />
+            <Field name="Name" />
+            <Field name="Email" />
+            <Field name="Message" />
             <button className="bg-button h-10 w-full px-3 mb-2">Message</button>
           </form>
         </div>
@@ -194,7 +188,7 @@ export default async function Home() {
     </>
   );
 }
-const Dddd = ({ name }) => {
+const Field = ({ name }) => {
   return (
     <div className="flex flex-col  mb-2">
       <label htmlFor={name} className="text-2xl px-3">
