@@ -3,21 +3,21 @@ import Link from "next/link";
 export const metadata = {
   title: "Fahad Abdullah | project",
   description: "Fahad Abdullah's project",
-  image: "/logo.png",
+  image: "/logo.svg",
 };
 
 export default function Layout({ children }) {
   return (
     <>
-      <nav className=" w-full h-20 flex justify-center items-end">
-        <Link href="/#PROJECT">
+      <nav className=" w-full h-20 flex justify-center items-end -mb-12">
+        <Link href="/#project" className="z-50">
           <svg
             width="63"
             height="57"
             viewBox="0 0 63 57"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className=""
+            className="drop-shadow-md"
           >
             <path
               fillRule="evenodd"
@@ -28,7 +28,7 @@ export default function Layout({ children }) {
           </svg>
         </Link>
       </nav>
-      <main className="max-w-[800px] w-full min-h-screen">{children}</main>
+      {children}
     </>
   );
 }

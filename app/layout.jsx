@@ -7,6 +7,7 @@ export const metadata = {
   title: "Fahad Abdullah",
   description: "Fahad Abdullah's personal website and portfolio",
   image: "/logo.svg",
+  icons: "/logo.svg",
 };
 
 export default function RootLayout({ children }) {

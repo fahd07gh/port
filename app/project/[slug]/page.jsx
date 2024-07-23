@@ -4,53 +4,16 @@ import React from "react";
 export default function page({ params }) {
   return (
     <article>
-      {/* <div className="flex items-center">
-        <span className="leading-none">home</span>
-        <span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </span>
-        <span className="leading-none">project</span>
-        <span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </span>
-        <span className="leading-none">{params.slug}</span>
-      </div> */}
-      <div className="relative mt-5 mb-20">
+      <div className="relative mt-5 mb-14">
         <img
-          //   src="https://images.unsplash.com/photo-1717501218325-ff260b4f4b01?q=800&w=425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          src="https://picsum.photos/1000"
+          src="https://images.unsplash.com/photo-1717501218325-ff260b4f4b01?q=800&w=425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          // src="https://picsum.photos/1000"
           alt={params.slug}
           className="aspect-video w-full rounded-md border"
         />
-        <div className="bg-accent/90 hover:bg-accent duration-300 rounded-lg px-5 py-2 w-[calc(100%-20px)] absolute translate-y-1/2 -translate-x-1/2 left-1/2 bottom-0 ">
-          <h1 className="font-black text-4xl">{params.slug}</h1>
-          <div className="flex justify-between items-center px-2">
+        <div className="bg-accent border rounded-lg px-5 py-2 w-[calc(100%-20px)] absolute translate-y-1/2 -translate-x-1/2 left-1/2 bottom-0 ">
+          <h1 className="font-black text-4xl line-clamp-1">{params.slug}</h1>
+          <div className="flex justify-between items-center ps-2">
             <div className="flex flex-row flex-nowrap gap-1">
               <span className="after:content-[',']">tags</span>
               <span className="after:content-[',']">tags</span>
