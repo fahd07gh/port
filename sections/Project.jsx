@@ -1,42 +1,20 @@
 import Card from "@/components/card";
 import SectionTitle from "@/components/SectionTitle";
+import { getProjects } from "@/sanity/lib/querys";
 import React from "react";
 
-export default function Project() {
+export default async function Project() {
+  const projects = await getProjects();
+  // console.log("projects", projects[0]);
+
   return (
     <section>
       <SectionTitle title="PROJECT" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 px-2">
-        <Card
-          Image="https://picsum.photos/177/100?grayscale"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
-        <Card
-          Image="https://picsum.photos/177/100?grayscale"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
-        <Card
-          Image="https://picsum.photos/177/100?grayscale"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
-        <Card
-          Image="https://picsum.photos/177/100"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
-        <Card
-          Image="https://picsum.photos/177/100"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
-        <Card
-          Image="https://picsum.photos/177/100"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi nobis similique deleniti. Placeat, error quod unde doloremque rerum quia consequatur culpa magnam autem illo? Veritatis quidem reiciendis repudiandae a."
-        />
+        {projects.map((project) => (
+          <Card key={project.slug} {...project} />
+        ))}
+        {/* <Card key={projects[0].slug} {...projects[0]} /> */}
       </div>
     </section>
   );
