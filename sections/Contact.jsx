@@ -2,24 +2,30 @@ import SectionTitle from "@/components/SectionTitle";
 import SocialMedia from "@/components/SocialMedia";
 import React from "react";
 
-export default function Contact() {
+export default function Contact({ lang }) {
+  let title = lang === "en" ? "CONTACT" : "تواصل";
+  let Name = lang === "en" ? "Name" : "الاسم";
+  let Email = lang === "en" ? "Email" : "البريد الالكتروني";
+  let Message = lang === "en" ? "Message" : "الرسالة";
+  let Send = lang === "en" ? "Send" : "ارسال";
+  let Or = lang === "en" ? "OR" : "او";
   return (
     <section className="mb-10">
-      <SectionTitle title="CONTACT" />
+      <SectionTitle title={title} />
       <div className="p-3">
         <form action="" className="bg-accent w-full rounded-xl px-3">
-          <Field name="Name" />
-          <Field name="Email" />
-          <Field name="Message" />
+          <Field name={Name} />
+          <Field name={Email} />
+          <Field name={Message} />
           <button className="bg-button hover:bg-button/70 mt-3 text-2xl font-black rounded-xl h-10 w-full px-3 mb-2">
-            Send
+            {Send}
           </button>
         </form>
       </div>
       <div>
         <div className="w-full h-px my-4 bg-color/20 relative">
           <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            OR
+            {Or}
           </span>
         </div>
       </div>

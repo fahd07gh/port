@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Fahad Abdullah | project",
+  title: "project",
   description: "Fahad Abdullah's project",
   image: "/logo.svg",
 };

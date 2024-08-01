@@ -8,17 +8,28 @@ import About from "@/sections/About";
 import Project from "@/sections/Project";
 import Contact from "@/sections/Contact";
 import { Suspense } from "react";
+import { getTest } from "@/sanity/lib/querys";
+import { cookies } from "next/headers";
+
+import Navbar from "@/components/navbar";
 
 export default async function pgae() {
-  // wait 5 seconds before return
-  // await new Promise((resolve) => setTimeout(resolve, 500));
+  const cookieStore = cookies();
+
+  let lang = cookieStore.get("lang").value;
 
   return (
     <>
-      <Home />
-      <About />
-      <Project />
-      <Contact />
+      {/* <form action={create}>
+        <button>sadasd</button>
+      </form> */}
+
+      <Navbar lang={lang} />
+
+      <Home lang={lang} />
+      <About lang={lang} />
+      <Project lang={lang} />
+      <Contact lang={lang} />
     </>
   );
 }

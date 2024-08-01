@@ -1,4 +1,4 @@
-import { HomeIcon } from "@sanity/icons";
+import { CogIcon } from "@sanity/icons";
 const languages = [
   { value: "ar", title: "Arabic" },
   { value: "en", title: "English" },
@@ -6,7 +6,7 @@ const languages = [
 export const settingsType = {
   name: "settings",
   title: "Settings",
-  icon: HomeIcon,
+  icon: CogIcon,
   type: "document",
   fields: [
     {

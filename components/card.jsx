@@ -1,8 +1,9 @@
-"use client";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-export default async function Card({ title, description, image, slug }) {
+export default async function Card({ title, description, image, slug, lang }) {
+  const readMore = lang == "en" ? "Read more" : "اقرأ المزيد";
+  const arrow = lang == "en" ? "&rarr;" : "&larr;";
   return (
     <Link
       href={`project/${slug}`}
@@ -21,8 +22,17 @@ export default async function Card({ title, description, image, slug }) {
         width={600}
         height={450}
       />
-      <h3 className="text-2xl font-bold">{title}</h3>
-      <p className="line-clamp-2">{description}</p>
+      <h3 className="text-2xl font-bold line-clamp-1">{title}</h3>
+      <p className="line-clamp-2 h-12">{description}</p>
+      <div className="pt-2">
+        <span className=" font-extrabold underline underline-offset-4 ">
+          {readMore}
+        </span>
+        <span className={`no-underline ${lang === "ar" && "hidden"}`}>
+          {" "}
+          &rarr;
+        </span>
+      </div>
     </Link>
   );
 }

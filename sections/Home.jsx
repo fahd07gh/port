@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 
-export default function Home() {
+export default function Home({ lang }) {
+  let next = lang === "en" ? "#about" : "#عني";
   const Logo = () => (
     <svg
       width="398"
@@ -21,7 +22,7 @@ export default function Home() {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center">
       <Logo />
-      <Link href="#about">
+      <Link href={next}>
         <svg
           className="cursor-pointer absolute bottom-5 animate-bounce duration-200 delay-300"
           width="30"

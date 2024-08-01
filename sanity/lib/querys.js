@@ -1,19 +1,25 @@
 import { client } from "@/sanity/lib/client";
+import { cookies } from "next/headers";
 
 export async function getAbout() {
+  const cookieStore = cookies();
+  let lang = cookieStore.get("lang").value;
   return client.fetch(
-    `*[_type == "about" && language == "ar"][0]{
+    `*[_type == "about" && language == $lang][0]{
         header,
         language,
         skills,
         education,
-      }`
+      }`,
+    { lang }
   );
 }
 
 export async function getProjects() {
+  const cookieStore = cookies();
+  let lang = cookieStore.get("lang").value;
   return client.fetch(
-    `*[_type == "project"]{
+    `*[_type == "project"&& language == $lang]{
         language,        
         title,
         "slug": slug.current,
@@ -24,13 +30,37 @@ export async function getProjects() {
         },
         tags,
         body,
-        }`
+        }`,
+    { lang }
   );
 }
 
 export async function getProject(slug) {
-  return client.fetch(`*[_type == "project" && slug.current == $slug][0]`, {
-    slug,
+  const cookieStore = cookies();
+  let lang = cookieStore.get("lang").value;
+  return client.fetch(
+    `*[_type == "project" && slug.current == $slug&& language == $lang][0]`,
+    {
+      slug,
+      lang,
+    }
+  );
+}
+export async function getSocialMedia() {
+  return client.fetch(`*[_type == "socialMedia"][0]{
+    Links
+    }`);
+}
+export async function getSetting() {
+  const cookieStore = cookies();
+  let lang = cookieStore.get("lang").value;
+  return client.fetch(`*[_type == "settings" && language == $lang][0]`, {
+    lang,
+  });
+}
+export async function getTest(title) {
+  return client.fetch(`*[_type == "sections" && title == $title ]`, {
+    title,
   });
 }
 

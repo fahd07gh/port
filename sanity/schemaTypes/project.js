@@ -28,6 +28,9 @@ export const projectType = {
       options: {
         source: "title",
         maxLength: 96,
+        documentInternationalization: {
+          exclude: true,
+        },
       },
     },
     {

@@ -7,7 +7,7 @@ import React from "react";
 
 export default async function page({ params }) {
   const project = await getProject(params.slug);
-  console.log("project", project);
+  // console.log("project", project);
   return (
     <article>
       <div className="relative mt-5 mb-14">
@@ -80,7 +80,7 @@ export default async function page({ params }) {
           </span>
           <ul>
             {project?.otherLinks.map((link) => (
-              <li>
+              <li key={link.url}>
                 <Link href={link.url}>{link.title}</Link>
               </li>
             ))}
